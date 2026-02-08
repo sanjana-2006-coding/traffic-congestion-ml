@@ -1,0 +1,8 @@
+Feature,Importance
+Junction,0.681445
+TimeBlock,0.09611914
+IsWeekend,0.08816728
+Hour_Squared,0.067905135
+Hour,0.041778464
+Season,0.021046499
+IsPeakHour,0.003538402
