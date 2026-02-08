@@ -1,50 +1,62 @@
-# Traffic Congestion Prediction & Route Recommendation
+# Traffic Congestion Prediction & Intelligent Route Selection 🚦
 
-This project predicts traffic congestion at multiple junctions using machine learning and provides an intelligent route recommendation.
+This project predicts traffic congestion at multiple junctions using machine learning
+and recommends the optimal route based on predicted vehicle count and contextual factors.
 
 ## Problem Statement
-Urban traffic congestion causes delays, fuel loss, and stress. Static routing systems fail to adapt to time-based traffic variations.
+Urban traffic congestion causes delays, fuel waste, and stress. This system predicts
+traffic intensity for different junctions at a given time and suggests the least
+congested route.
 
-## Solution
-An ML-based system that:
-- Predicts traffic volume using XGBoost
-- Adjusts predictions with rule-based traffic heuristics
-- Recommends the least congested route
-- Estimates expected travel delay
-
-## Dataset
-- Historical traffic counts
-- Timestamp-based features (hour, weekday, season)
-- Junction identifiers
-
-## Feature Engineering
-- Peak hour detection
-- Time blocks
-- Hour squared (non-linearity)
-- Weekend and seasonal indicators
-
-## Model
+## Tech Stack
+- Python
+- Pandas, NumPy
 - XGBoost Regressor
-- Compared against mean baseline
-- Feature importance extracted for interpretability
+- Scikit-learn
+- Streamlit
 
-## Results
-- XGBoost outperforms baseline prediction
-- Peak hour and time-based features dominate importance
+## Features
+- Time-based traffic prediction (hour, peak hours, weekends)
+- Seasonal impact modeling
+- Intelligent route scoring using congestion penalties
+- Interactive Streamlit UI for real-time predictions
 
-## Limitations
-- Random train-validation split (not time-aware)
-- No lag-based traffic features
-- Junction interactions are heuristic-based
-
-## Future Improvements
-- Time-series validation
-- Lag and rolling traffic features
-- Graph-based route optimization
+## Project Structure
+traffic-prediction/
+├── app.py
+├── train_model.py
+├── preprocessor.py
+├── requirements.txt
+├── README.md
+├── data/
+│ └── traffic_data.csv
+├── model/
+│ └── traffic_model.pkl
 
 ## How to Run
-```bash
-pip install -r requirements.txt
-python preprocessor.py
-python train_model.py
-streamlit run app.py
+1. Create virtual environment
+   python -m venv venv
+   venv\Scripts\activate
+
+2. Install dependencies
+   pip install -r requirements.txt
+
+3. Preprocess data
+   python preprocessor.py
+
+4. Train model
+   python train_model.py
+
+5. Run application
+   streamlit run app.py
+
+## Output
+- Predicts vehicle count for each junction
+- Classifies congestion as Low / Medium / High
+- Recommends optimal route
+
+## Future Enhancements
+- Real-time traffic data integration
+- Map-based visualization
+- Deep learning models (LSTM)
+- Deployment on cloud
